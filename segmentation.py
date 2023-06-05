@@ -58,6 +58,7 @@ def imgSeg(filename: str) -> Image:
 
     output_predictions_copy = output_predictions.detach().clone()
 
+    # For white-black mask
     for i in range(r):
         for j in range(w):
             if (output_predictions[i][j] > 0):
