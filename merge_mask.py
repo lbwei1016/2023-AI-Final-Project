@@ -1,13 +1,13 @@
 from PIL import Image
 
-def merge_mask(path1, path2):
+def merge_mask(path1, base_mask):
     img1 = Image.open(path1)
-    img2 = Image.open(path2)
+    # img2 = Image.open(path2)
     # img1 = img1.convert("RGB")
     # img2 = img2.convert("RGB")
 
     data1 = list(img1.getdata())
-    data2 = list(img2.getdata())
+    # data2 = list(img2.getdata())
 
     r, w = img1.size
     length = r * w
@@ -15,7 +15,7 @@ def merge_mask(path1, path2):
     # WHITE = (255, 255, 255)
     BLACK = (0, 0, 0)
     # merge = [WHITE for i in range(length)]
-    merge = [BLACK for i in range(length)]
+    # merge = [BLACK for i in range(length)]
 
     for i in range(length):
         # print(data1[i])
@@ -26,9 +26,9 @@ def merge_mask(path1, path2):
         # else: merge[i] = WHITE
 
         if data1[i] != BLACK:
-            merge[i] = data1[i]
-        elif data2[i] != BLACK:
-            merge[i] = data2[i]
+            base_mask[i] = data1[i]
+        # elif data2[i] != BLACK:
+            # merge[i] = data2[i]
         # else: merge[i] = BLACK
 
         # if type(merge[i]) is not tuple:
@@ -40,7 +40,7 @@ def merge_mask(path1, path2):
     # img3.putdata(merge)
     # img3.save("merged.png")
 
-    return merge
+    return base_mask
 
     # a = [(1, 2), (3, 4)]
     # b = [(9, 8), (7, 6)]
