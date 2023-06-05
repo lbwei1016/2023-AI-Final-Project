@@ -72,6 +72,6 @@ def imgSeg(filename: str) -> Image:
     # pixel = np.array(r)
     # print(pixel)
 
-    r.save(f"./test_sets/masks/{filename}")
-    r_color.save(f"./test_sets/color_masks/{filename}")
+    r.convert('RGB').save(f"./test_sets/masks/{filename}")
+    r_color.convert('RGB').save(f"./test_sets/color_masks/{filename}")
     # return r
