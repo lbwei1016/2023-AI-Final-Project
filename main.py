@@ -22,6 +22,7 @@ if __name__ == "__main__":
             # generate masks
             segmentation.imgSeg(image)
             print("seg good")
+            print(f"merge: {color_mask_path}/{image}")
             base_mask = merge_mask(f"{color_mask_path}/{image}", base_mask)
             print("merge good")
             
@@ -30,5 +31,5 @@ if __name__ == "__main__":
 
         img = Image.new("RGB", (SIZE, SIZE))
         img.putdata(base_mask)
-        img.save(color_mask_path + image)
+        img.save(f"{color_mask_path}/{image}")
         
