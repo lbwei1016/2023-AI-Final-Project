@@ -21,9 +21,12 @@ if __name__ == "__main__":
             print(f"iter: {_}")
             # generate masks
             segmentation.imgSeg(image)
+            print("seg good")
             base_mask = merge_mask(f"{color_mask_path}/{image}", base_mask)
+            print("merge good")
             
             inpainting.inpaint()
+            print("inpaint good")
 
         img = Image.new("RGB", (SIZE, SIZE))
         img.putdata(base_mask)
