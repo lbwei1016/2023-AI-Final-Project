@@ -18,7 +18,7 @@ if __name__ == "__main__":
     for image in images:
         base_mask = [BLACK for _ in range(SIZE * SIZE)]
         for i in range(ITERATION):
-            print(f"iter: {_}")
+            print(f"iter: {i}")
             # generate masks
             segmentation.imgSeg(image)
             print("seg good")
