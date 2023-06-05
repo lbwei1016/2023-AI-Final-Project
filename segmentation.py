@@ -54,19 +54,21 @@ def imgSeg(filename: str) -> Image:
 
     r, w = output_predictions.shape
 
+    output_predictions_copy = output_predictions.copy()
+
     for i in range(r):
         for j in range(w):
             if (output_predictions[i][j] > 0):
                 output_predictions[i][j] = 1
 
     r = Image.fromarray(output_predictions.byte().cpu().numpy()).resize(input_image.size)
-    r_copy = r.copy()
+    r_color = Image.fromarray(output_predictions_copy.byte().cpu().numpy()).resize(input_image.size)
     r.putpalette([255, 255, 255, 0, 0, 0]) # labeled object is black (0, 0, 0)
-    r_copy.putpalette(colors)
+    r_color.putpalette(colors)
 
     # pixel = np.array(r)
     # print(pixel)
 
     r.save(f"./test_sets/masks/{filename}_mask.png")
-    r_copy.save(f"./test_sets/color_masks/{filename}_mask.png")
+    r_color.save(f"./test_sets/color_masks/{filename}_mask.png")
     # return r
