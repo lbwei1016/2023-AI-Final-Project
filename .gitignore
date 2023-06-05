@@ -1,2 +1,5 @@
-!*.py
-MAT/
+*.*
+!inpainting.py
+!main.py
+!README.md
+!segmentation.py

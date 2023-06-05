@@ -5,6 +5,20 @@ from PIL import Image
 from torchvision import transforms
 import numpy as np
 
+def resize_image(image_path, output_path):
+    image = Image.open(image_path)
+    
+    # Calculate the new dimensions
+    width, height = image.size
+    new_width = (width // 512) * 512
+    new_height = (height // 512) * 512
+    
+    # Resize the image
+    resized_image = image.resize((new_width, new_height))
+    
+    # Save the resized image
+    resized_image.save(output_path)
+
 def imgSeg(filename: str) -> Image:
 
     # model = torch.hub.load('pytorch/vision:v0.10.0', 'deeplabv3_resnet50', pretrained=True)
@@ -12,7 +26,10 @@ def imgSeg(filename: str) -> Image:
     model.eval()
 
     # image size must be a multiple of 512
-    input_image = Image.open("./test_sets/images/" + filename)
+    path = "./test_sets/images/" + filename
+    resize_image(path, path)
+
+    input_image = Image.open(path)
     input_image = input_image.convert("RGB")
     preprocess = transforms.Compose([
         transforms.ToTensor(),
