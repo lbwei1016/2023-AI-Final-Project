@@ -44,9 +44,9 @@ def imgSeg(filename: str) -> Image:
     output_predictions = output.argmax(0)
 
     # create a color pallette, selecting a color for each class
-    # palette = torch.tensor([2 ** 25 - 1, 2 ** 15 - 1, 2 ** 21 - 1])
-    # colors = torch.as_tensor([i for i in range(21)])[:, None] * palette
-    # colors = (colors % 255).numpy().astype("uint8")
+    palette = torch.tensor([2 ** 25 - 1, 2 ** 15 - 1, 2 ** 21 - 1])
+    colors = torch.as_tensor([i for i in range(21)])[:, None] * palette
+    colors = (colors % 255).numpy().astype("uint8")
 
     # print(colors)
 
@@ -60,10 +60,13 @@ def imgSeg(filename: str) -> Image:
                 output_predictions[i][j] = 1
 
     r = Image.fromarray(output_predictions.byte().cpu().numpy()).resize(input_image.size)
+    r_copy = r.copy()
     r.putpalette([255, 255, 255, 0, 0, 0]) # labeled object is black (0, 0, 0)
+    r_copy.putpalette(colors)
 
     # pixel = np.array(r)
     # print(pixel)
 
     r.save(f"./test_sets/masks/{filename}_mask.png")
-    return r
+    r_copy.save(f"./test_sets/color_masks/{filename}_mask.png")
+    # return r
