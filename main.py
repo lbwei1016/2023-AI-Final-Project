@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     for image in images:
         base_mask = [BLACK for _ in range(SIZE * SIZE)]
-        for _ in range(ITERATION):
+        for i in range(ITERATION):
             print(f"iter: {_}")
             # generate masks
             segmentation.imgSeg(image)
@@ -29,7 +29,7 @@ if __name__ == "__main__":
             inpainting.inpaint()
             print("inpaint good")
 
-        img = Image.new("RGB", (SIZE, SIZE))
-        img.putdata(base_mask)
-        img.save(f"{color_mask_path}/{image}")
+            img = Image.new("RGB", (SIZE, SIZE))
+            img.putdata(base_mask)
+            img.save(f"{color_mask_path}/{i}_{image}")
         
