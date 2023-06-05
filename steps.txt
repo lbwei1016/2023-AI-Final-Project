@@ -1,0 +1,7 @@
+DeepLabv3+: D; MAT: M
+
+1. 載入 dataset
+2. 用 D 切，得到 mask m
+3. 用 M + m
+
+可以考慮一次切一個，慢慢補比較不會壞掉
