@@ -21,10 +21,10 @@ if __name__ == "__main__":
             print(f"iter: {_}")
             # generate masks
             segmentation.imgSeg(image)
-            base_mask = merge_mask(f"{color_mask_path}/{image}_mask.png", base_mask)
+            base_mask = merge_mask(f"{color_mask_path}/{image}", base_mask)
             
             inpainting.inpaint()
-            
+
         img = Image.new("RGB", (SIZE, SIZE))
         img.putdata(base_mask)
         img.save(color_mask_path + image)
