@@ -5,19 +5,19 @@ from PIL import Image
 from torchvision import transforms
 import numpy as np
 
-def resize_image(image_path, output_path):
-    image = Image.open(image_path)
+# def resize_image(image_path, output_path):
+#     image = Image.open(image_path)
     
-    # Calculate the new dimensions
-    width, height = image.size
-    new_width = (width // 512) * 512
-    new_height = (height // 512) * 512
+#     # Calculate the new dimensions
+#     width, height = image.size
+#     new_width = (width // 512) * 512
+#     new_height = (height // 512) * 512
     
-    # Resize the image
-    resized_image = image.resize((new_width, new_height))
+#     # Resize the image
+#     resized_image = image.resize((new_width, new_height))
     
-    # Save the resized image
-    resized_image.save(output_path)
+#     # Save the resized image
+#     resized_image.save(output_path)
 
 def imgSeg(filename: str) -> Image:
 
@@ -27,7 +27,7 @@ def imgSeg(filename: str) -> Image:
 
     # image size must be a multiple of 512
     path = "./test_sets/images/" + filename
-    resize_image(path, path)
+    # resize_image(path, path)
 
     input_image = Image.open(path)
     input_image = input_image.convert("RGB")
