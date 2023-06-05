@@ -54,7 +54,7 @@ def imgSeg(filename: str) -> Image:
 
     r, w = output_predictions.shape
 
-    output_predictions_copy = output_predictions.copy()
+    output_predictions_copy = output_predictions.detach().clone()
 
     for i in range(r):
         for j in range(w):
