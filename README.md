@@ -49,10 +49,12 @@ The input of our algorithm is an image, and it outputs a mask, which is the resu
 Below is the pseudo-code of our algorithm.
 
 ```py
-procedure SegWithInpaint (img: input image,
-Seg: segmentation subroutine, 
-Inp: inpainting subroutine,
-Iter: number of iterations)
+procedure SegWithInpaint (
+  img: input image, 
+  Seg: segmentation subroutine, 
+  Inp: inpaintingsubroutine, 
+  Iter: number of iterations
+)
 1. M <- img
 2. Initialize the BaseMask.
 3. for iter in range(Iter); do
