@@ -41,9 +41,3 @@ def merge_mask(path1, base_mask):
     # img3.save("merged.png")
 
     return base_mask
-
-    # a = [(1, 2), (3, 4)]
-    # b = [(9, 8), (7, 6)]
-
-    # a[0] = b[1]
-    # print(a)

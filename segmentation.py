@@ -5,23 +5,6 @@ from PIL import Image
 from torchvision import transforms
 import numpy as np
 
-# def resize_image(image_path, output_path):
-#     image = Image.open(image_path)
-    
-#     # # Calculate the new dimensions
-#     # width, height = image.size
-#     # new_width = (width // 512) * 512
-#     # new_height = (height // 512) * 512
-    
-#     # # Resize the image
-#     # resized_image = image.resize((new_width, new_height))
-
-#     resized_image = image.resize((512, 1024))
-    
-#     # Save the resized image
-#     resized_image.save(output_path)
-
-
 def imgSeg(filename: str) -> Image:
 
     # model = torch.hub.load('pytorch/vision:v0.10.0', 'deeplabv3_resnet50', pretrained=True)

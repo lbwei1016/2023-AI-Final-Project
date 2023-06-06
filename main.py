@@ -48,9 +48,11 @@ if __name__ == "__main__":
         base_mask = [BLACK for _ in range(w * h)]
         for i in range(ITERATION):
             print(f"iter: {i}")
+
             # generate masks
             segmentation.imgSeg(image)
             print("seg good")
+            
             print(f"merge: {color_mask_path}/{image}")
             base_mask = merge_mask(f"{color_mask_path}/{image}", base_mask)
             print("merge good")
