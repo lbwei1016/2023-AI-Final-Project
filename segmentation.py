@@ -36,7 +36,7 @@ def pad_image(image_path):
     # Create a new blank image with the desired size
     new_width = ((width - 1) // 512 + 1) * 512
     new_height = ((height - 1) // 512 + 1) * 512
-    padded_image = Image.new('RGB', (new_width, height), (0, 0, 0))
+    padded_image = Image.new('RGB', (new_width, new_height), (0, 0, 0))
 
     # Calculate the position to paste the original image
     x = (new_width - width) // 2
