@@ -1,6 +1,26 @@
 # 2023-AI-Final-Project
 ## Enhanced Image Segmentation with Iterative Image Inpainting
 
+- [2023-AI-Final-Project](#2023-ai-final-project)
+  - [Enhanced Image Segmentation with Iterative Image Inpainting](#enhanced-image-segmentation-with-iterative-image-inpainting)
+    - [Installation](#installation)
+    - [Intorduction](#intorduction)
+    - [Related Works](#related-works)
+    - [Dataset](#dataset)
+    - [Baseline](#baseline)
+    - [Main Approach](#main-approach)
+    - [Evaluation metric](#evaluation-metric)
+    - [Result \& Analysis](#result--analysis)
+    - [References](#references)
+
+### Installation
+
+1. Clone [MAT](https://github.com/fenglinglwb/MAT/tree/main).
+2. `pip install -r requirements.txt` for **MAT**.
+3. Clone this repo.
+4. Copy the files of this repo to the directory of **MAT**.
+5. Run `python main.py`
+
 ### Intorduction
 
 **Image segmentation** involves dividing an image into multiple regions or segments based on certain characteristics such as color, texture, or intensity. The purpose of segmentation is to simplify the representation of an image, making it easier to analyze and understand. It is a fundamental step in various computer vision tasks, including object detection, tracking, and recognition. 
