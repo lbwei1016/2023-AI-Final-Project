@@ -6,5 +6,5 @@ mpath = "./test_sets/masks"
 outdir = "./test_sets/images"
 
 def inpaint():
-    generate_images(network_pkl=network, dpath=dpath, mpath=mpath, outdir=outdir)
+    generate_images(network_pkl=network, dpath=dpath, mpath=mpath, outdir=outdir, noise_mode='random')
 
