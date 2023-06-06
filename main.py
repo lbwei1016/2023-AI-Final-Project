@@ -58,7 +58,7 @@ if __name__ == "__main__":
             inpainting.inpaint()
             print("inpaint good")
 
-            img = Image.new("RGB", (SIZE, SIZE))
+            img = Image.new("RGB", (w, h))
             img.putdata(base_mask)
             img.save(f"{color_mask_path}/{i}_{image}")
         
