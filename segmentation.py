@@ -5,21 +5,21 @@ from PIL import Image
 from torchvision import transforms
 import numpy as np
 
-def resize_image(image_path, output_path):
-    image = Image.open(image_path)
+# def resize_image(image_path, output_path):
+#     image = Image.open(image_path)
     
-    # # Calculate the new dimensions
-    # width, height = image.size
-    # new_width = (width // 512) * 512
-    # new_height = (height // 512) * 512
+#     # # Calculate the new dimensions
+#     # width, height = image.size
+#     # new_width = (width // 512) * 512
+#     # new_height = (height // 512) * 512
     
-    # # Resize the image
-    # resized_image = image.resize((new_width, new_height))
+#     # # Resize the image
+#     # resized_image = image.resize((new_width, new_height))
 
-    resized_image = image.resize((512, 1024))
+#     resized_image = image.resize((512, 1024))
     
-    # Save the resized image
-    resized_image.save(output_path)
+#     # Save the resized image
+#     resized_image.save(output_path)
 
 
 def pad_image(image_path):
@@ -30,15 +30,17 @@ def pad_image(image_path):
     width, height = image.size
 
     # Check if padding is necessary
-    if width == 512 and height == 512:
+    if width % 512 == 0 and height % 512 == 0:
         return image  # No need to pad
 
     # Create a new blank image with the desired size
-    padded_image = Image.new('RGB', (512, 512), (0, 0, 0))
+    new_width = ((width - 1) // 512 + 1) * 512
+    new_height = ((height - 1) // 512 + 1) * 512
+    padded_image = Image.new('RGB', (new_width, height), (0, 0, 0))
 
     # Calculate the position to paste the original image
-    x = (512 - width) // 2
-    y = (512 - height) // 2
+    x = (new_width - width) // 2
+    y = (new_height - height) // 2
 
     # Paste the original image onto the new blank image
     padded_image.paste(image, (x, y))
