@@ -98,11 +98,31 @@ We intend to use mIOU: Mean Intersection over Union as our quantitative metric, 
 
 <table cellpadding="0" cellspacing="0" style="width: 100%;" border="0">
 <tbody><tr>
-<td>　<img src="./img/res3.png" width=30% height=30% />　</td>
-<td>　<img src="./img/res5.png" width=30% height=30% />　</td>
-<td> <img src="./img/res4.png" width=30% height=30% /> </td>
+<td>　<img src="./img/res3.png"  />　</td>
+<td>　<img src="./img/res5.png"  />　</td>
+<td> <img src="./img/res4.png"  /> </td>
 </tr></tbody></table>
  
 <!-- ![MAT](./img/res3.png) -->
 <!-- ![MAT](./img/res5.png) -->
 <!-- ![MAT](./img/res4.png) -->
+
+### References
+
+**Datasets**
+
+- http://host.robots.ox.ac.uk:8080/eval/challenges/voc2010/
+- https://github.com/open-mmlab/mmsegmentation/blob/master/docs/en/dataset_prepare.md#pascal-context
+
+**Image Inpating**
+
+- https://github.com/htzheng/CM-GAN-Inpainting?fbclid=IwAR22WpsLzkoIfn35e1P5rt_g4AqKN4xKrnpxWMgvEvh11CdHGf14E1aeiQU
+- https://github.com/advimman/lama?fbclid=IwAR0wqTXkRKVTas-Qm--wUO04q3jDOL6WudrJb8rqKfINArUz1EKXtFeTUVE
+- https://github.com/andy971022/auto-lama
+
+**Image Segmentation**
+
+- https://arxiv.org/pdf/1606.00915v2.pdf
+- https://github.com/google-research/deeplab2
+- https://github.com/VainF/DeepLabV3Plus-Pytorch
+- https://pytorch.org/hub/pytorch_vision_deeplabv3_resnet101/
