@@ -7,5 +7,12 @@ outdir = "./test_sets/images"
 resolution = 1024
 
 def inpaint():
-    generate_images(network_pkl=network, dpath=dpath, mpath=mpath, outdir=outdir, noise_mode='random', resolution=resolution)
+    generate_images(
+        network_pkl=network, 
+        dpath=dpath, 
+        mpath=mpath, 
+        outdir=outdir, 
+        noise_mode='random', 
+        resolution=resolution
+    )
 
