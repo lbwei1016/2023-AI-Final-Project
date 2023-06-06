@@ -40,7 +40,7 @@ A Residual Neural Network (ResNet) is a deep learning model in which the weight 
 
 ### Main Approach
 
-![./img/flow-chart.png](flow-chart.png)
+<img src="./img/flow-chart.png" width=50% height=50%>
 
 The main goal of our algorithm is to produce a **more-accurate image segmentation result**; the most important subroutines are: **ordinary image segmentation** and **image inpainting**. We iteratively call the subroutines several times to obtain the final result. 
 
@@ -86,19 +86,19 @@ We intend to use mIOU: Mean Intersection over Union as our quantitative metric, 
 
 **Baseline:**
 
-<img src="./img/res1.jpg" width=50% height=50%>
+<img src="./img/res1.png" width=50% height=50%>
 <!-- ![baseline](./img/res1.png) -->
 
 **Use LaMa to inpaint:**
 
-<img src="./img/res2.jpg" width=50% height=50%>
+<img src="./img/res2.png" width=50% height=50%>
 <!-- ![LaMa](./img/res2.png) -->
 
 **Use MAT to inpaint:**
 
-<img src="./img/res3.jpg" width=50% height=50%>
-<img src="./img/res5.jpg" width=30% height=30%>
-<img src="./img/res4.jpg" width=50% height=50%>
+<img src="./img/res3.png" width=50% height=50%>
+<img src="./img/res5.png" width=30% height=30%>
+<img src="./img/res4.png" width=50% height=50%>
 <!-- ![MAT](./img/res3.png) -->
 <!-- ![MAT](./img/res5.png) -->
 <!-- ![MAT](./img/res4.png) -->
