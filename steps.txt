@@ -9,5 +9,6 @@ DeepLabv3+: D; MAT: M
 -------------------------------------
 
 size 512*512 問題
+    generate_image.py: noise_mode = 'random'
 CUDA 要載 / VOC 2012?
     哪個 dataset?
