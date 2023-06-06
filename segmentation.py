@@ -57,6 +57,8 @@ def imgSeg(filename: str) -> Image:
 
     # input_image = Image.open(path)
     input_image = pad_image(path)
+    input_image.save(path)
+
     input_image = input_image.convert("RGB")
     preprocess = transforms.Compose([
         transforms.ToTensor(),
