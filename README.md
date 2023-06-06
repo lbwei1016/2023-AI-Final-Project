@@ -99,7 +99,7 @@ We intend to use mIOU: Mean Intersection over Union as our quantitative metric, 
 <table cellpadding="0" cellspacing="0" style="width: 100%;" border="0">
 <tbody><tr>
 <td>　<img src="./img/res3.png"  />　</td>
-<td>　<img src="./img/res5.png"  />　</td>
+<td>　<img src="./img/res5.png" width="50%" height="50%" />　</td>
 <td> <img src="./img/res4.png"  /> </td>
 </tr></tbody></table>
  
