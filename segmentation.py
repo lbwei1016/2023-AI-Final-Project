@@ -22,31 +22,6 @@ import numpy as np
 #     resized_image.save(output_path)
 
 
-def pad_image(image_path):
-    # Open the image
-    image = Image.open(image_path)
-
-    # Get the current image size
-    width, height = image.size
-
-    # Check if padding is necessary
-    if width % 512 == 0 and height % 512 == 0:
-        return image  # No need to pad
-
-    # Create a new blank image with the desired size
-    new_width = ((width - 1) // 512 + 1) * 512
-    new_height = ((height - 1) // 512 + 1) * 512
-    padded_image = Image.new('RGB', (new_width, new_height), (0, 0, 0))
-
-    # Calculate the position to paste the original image
-    x = (new_width - width) // 2
-    y = (new_height - height) // 2
-
-    # Paste the original image onto the new blank image
-    padded_image.paste(image, (x, y))
-
-    return padded_image
-
 def imgSeg(filename: str) -> Image:
 
     # model = torch.hub.load('pytorch/vision:v0.10.0', 'deeplabv3_resnet50', pretrained=True)
@@ -57,10 +32,10 @@ def imgSeg(filename: str) -> Image:
     path = "./test_sets/images/" + filename
     # resize_image(path, path)
 
-    # input_image = Image.open(path)
-    input_image = pad_image(path)
-    input_image = input_image.convert("RGB")
-    input_image.save(path)      
+    input_image = Image.open(path)
+    # input_image = pad_image(path)
+    # input_image = input_image.convert("RGB")
+    # input_image.save(path)      
 
 
     preprocess = transforms.Compose([
