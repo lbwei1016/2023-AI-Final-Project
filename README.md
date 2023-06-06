@@ -40,7 +40,7 @@ A Residual Neural Network (ResNet) is a deep learning model in which the weight 
 
 ### Main Approach
 
-![./flow-chart.png](flow-chart.png)
+![./img/flow-chart.png](flow-chart.png)
 
 The main goal of our algorithm is to produce a **more-accurate image segmentation result**; the most important subroutines are: **ordinary image segmentation** and **image inpainting**. We iteratively call the subroutines several times to obtain the final result. 
 
@@ -66,3 +66,33 @@ procedure SegWithInpaint (
 9. return BaseMask
 end procedure
 ```
+
+### Evaluation metric
+
+**Qualitative**: 
+
+We directly compare the segmentation results of DeepLabV3+ and that of our algorithm, through human’s eyes test: Check which one has detected more objects, accurately.
+
+**Quantitative**:
+
+We intend to use mIOU: Mean Intersection over Union as our quantitative metric, which is common in image segmentation literature.  However,  since our algorithm is not efficient enough, we fail to perform evalutation before the deadline of this project.
+
+### Result & Analysis
+
+**Original image**:
+
+![original](./img/original.jpg)
+
+**Baseline:**
+
+![baseline](./img/res1.png)
+
+**Use LaMa to inpaint:**
+
+![LaMa](./img/res2.png)
+
+**Use MAT to inpaint:**
+
+![MAT](./img/res3.png)
+![MAT](./img/res4.png)
+![MAT](./img/res5.png)
