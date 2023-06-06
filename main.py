@@ -18,7 +18,8 @@ def pad_image(image_path):
 
     # Check if padding is necessary
     if width % 512 == 0 and height % 512 == 0:
-        return image  # No need to pad
+        return (width, height)
+        # return image  # No need to pad
 
     # Create a new blank image with the desired size
     new_width = ((width - 1) // 512 + 1) * 512
