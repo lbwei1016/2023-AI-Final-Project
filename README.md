@@ -81,7 +81,8 @@ We intend to use mIOU: Mean Intersection over Union as our quantitative metric, 
 
 **Original image**:
 
-![original](./img/original.jpg)
+<img src="./img/original.jpg" width=50% height=50%>
+<!-- ![original](./img/original.jpg) -->
 
 **Baseline:**
 
@@ -94,5 +95,5 @@ We intend to use mIOU: Mean Intersection over Union as our quantitative metric, 
 **Use MAT to inpaint:**
 
 ![MAT](./img/res3.png)
-![MAT](./img/res4.png)
 ![MAT](./img/res5.png)
+![MAT](./img/res4.png)
