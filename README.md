@@ -96,7 +96,7 @@ We intend to use mIOU: Mean Intersection over Union as our quantitative metric, 
 
 **Use MAT to inpaint:**
 
-<table cellpadding="0" cellspacing="0" style="width: 100%;">
+<table cellpadding="0" cellspacing="0" style="width: 100%;" border="0">
 <tbody><tr>
 <td>　<img src="./img/res3.png" width=30% height=30% />　</td>
 <td>　<img src="./img/res5.png" width=30% height=30% />　</td>
