@@ -16,10 +16,34 @@ def resize_image(image_path, output_path):
     # # Resize the image
     # resized_image = image.resize((new_width, new_height))
 
-    resized_image = image.resize((512, 512))
+    resized_image = image.resize((512, 1024))
     
     # Save the resized image
     resized_image.save(output_path)
+
+
+def pad_image(image_path):
+    # Open the image
+    image = Image.open(image_path)
+
+    # Get the current image size
+    width, height = image.size
+
+    # Check if padding is necessary
+    if width == 512 and height == 512:
+        return image  # No need to pad
+
+    # Create a new blank image with the desired size
+    padded_image = Image.new('RGB', (512, 512), (0, 0, 0))
+
+    # Calculate the position to paste the original image
+    x = (512 - width) // 2
+    y = (512 - height) // 2
+
+    # Paste the original image onto the new blank image
+    padded_image.paste(image, (x, y))
+
+    return padded_image
 
 def imgSeg(filename: str) -> Image:
 
@@ -31,7 +55,8 @@ def imgSeg(filename: str) -> Image:
     path = "./test_sets/images/" + filename
     # resize_image(path, path)
 
-    input_image = Image.open(path)
+    # input_image = Image.open(path)
+    input_image = pad_image(path)
     input_image = input_image.convert("RGB")
     preprocess = transforms.Compose([
         transforms.ToTensor(),
