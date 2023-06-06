@@ -81,19 +81,24 @@ We intend to use mIOU: Mean Intersection over Union as our quantitative metric, 
 
 **Original image**:
 
-<img src="./img/original.jpg" width=50% height=50%>
+<img src="./img/original.jpg" width=30% height=30%>
 <!-- ![original](./img/original.jpg) -->
 
 **Baseline:**
 
-![baseline](./img/res1.png)
+<img src="./img/res1.jpg" width=50% height=50%>
+<!-- ![baseline](./img/res1.png) -->
 
 **Use LaMa to inpaint:**
 
-![LaMa](./img/res2.png)
+<img src="./img/res2.jpg" width=50% height=50%>
+<!-- ![LaMa](./img/res2.png) -->
 
 **Use MAT to inpaint:**
 
-![MAT](./img/res3.png)
-![MAT](./img/res5.png)
-![MAT](./img/res4.png)
+<img src="./img/res3.jpg" width=50% height=50%>
+<img src="./img/res5.jpg" width=30% height=30%>
+<img src="./img/res4.jpg" width=50% height=50%>
+<!-- ![MAT](./img/res3.png) -->
+<!-- ![MAT](./img/res5.png) -->
+<!-- ![MAT](./img/res4.png) -->
